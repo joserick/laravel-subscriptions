@@ -29,7 +29,7 @@ class CreatePlanFeaturesTable extends Migration
             $table->softDeletes();
 
             // Indexes
-            $table->unique(['plan_id', 'slug']);
+            $table->unique('plan_id');
             $table->foreign('plan_id')->references('id')->on(config('rinvex.subscriptions.tables.plans'))
                   ->onDelete('cascade')->onUpdate('cascade');
         });
